@@ -1,7 +1,7 @@
 import React from 'react';
 import WebView from 'react-native-webview';
 import useContainer from './hook';
-import {FlatList} from 'react-native';
+import {ActivityIndicator, FlatList, View} from 'react-native';
 import {sportNews} from '../assets/MockData';
 
 const Main = () => {
@@ -9,11 +9,17 @@ const Main = () => {
     styles,
     uri,
     webViewRef,
+    loader,
     conditionForPlug,
     renderPlugItem,
     renderItemSeparatorComponent,
   } = useContainer();
-  return conditionForPlug ? (
+
+  return loader ? (
+    <View style={styles.loaderContainer}>
+      <ActivityIndicator size={'large'} />
+    </View>
+  ) : conditionForPlug ? (
     <FlatList
       data={sportNews}
       renderItem={renderPlugItem}

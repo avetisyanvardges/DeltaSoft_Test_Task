@@ -7,6 +7,11 @@ const Styles = () => {
       padding: 10,
       paddingBottom: 20,
     },
+    loaderContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     itemContainer: {
       backgroundColor: BackgroundColors.white,
       borderRadius: Sizes(12),

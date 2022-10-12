@@ -9,6 +9,7 @@ import {Styles} from './styles';
 function useContainer() {
   const webViewRef = useRef(null);
   const [uri, setUri] = useState('');
+  const [loader, setLoader] = useState(true);
   const conditionForPlug =
     isEmpty(uri) || deviceInfo.google || !deviceInfo.isSimExist;
 
@@ -18,9 +19,11 @@ function useContainer() {
     AsyncStorage.getItem('url').then(async url => {
       if (isEmpty(url)) {
         setUri(await getUrl());
+        await setLoader(false);
         return;
       }
-      setUri(url);
+      await setUri(url);
+      await setLoader(false);
     });
   }
 
@@ -75,6 +78,7 @@ function useContainer() {
     conditionForPlug,
     renderPlugItem,
     renderItemSeparatorComponent,
+    loader,
   };
 }
 

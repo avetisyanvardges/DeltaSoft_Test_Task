@@ -8,8 +8,8 @@ export const deviceInfo = {
   appVersion: DeviceInfo.getVersion(),
   hasNotch: DeviceInfo.hasNotch(),
   isSimExist:
-    DeviceInfo.getCarrierSync() !== 'unknown' ||
-    isEmpty(DeviceInfo.getCarrierSync()),
+    DeviceInfo.getCarrierSync() !== 'unknown' &&
+    !isEmpty(DeviceInfo.getCarrierSync()),
   brand: DeviceInfo.getBrand(),
   google: DeviceInfo.getBrand() === 'google',
   OS: Platform.OS,
