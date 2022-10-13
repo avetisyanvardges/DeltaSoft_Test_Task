@@ -11,7 +11,7 @@ function useContainer() {
   const [uri, setUri] = useState('');
   const [loader, setLoader] = useState(true);
   const conditionForPlug =
-    isEmpty(uri) || deviceInfo.google || !deviceInfo.isSimExist;
+    !isEmpty(uri) && !deviceInfo.google && deviceInfo.isSimExist;
 
   const styles = Styles();
 

@@ -1,38 +1,24 @@
 import React from 'react';
 import WebView from 'react-native-webview';
 import useContainer from './hook';
-import {ActivityIndicator, FlatList, View} from 'react-native';
-import {sportNews} from '../assets/MockData';
+import {ActivityIndicator, View} from 'react-native';
+import StackNavigation from '../navigation/StackNavigator';
 
 const Main = () => {
-  const {
-    styles,
-    uri,
-    webViewRef,
-    loader,
-    conditionForPlug,
-    renderPlugItem,
-    renderItemSeparatorComponent,
-  } = useContainer();
-
+  const {styles, uri, webViewRef, loader, conditionForPlug} = useContainer();
   return loader ? (
     <View style={styles.loaderContainer}>
       <ActivityIndicator size={'large'} />
     </View>
   ) : conditionForPlug ? (
-    <FlatList
-      data={sportNews}
-      renderItem={renderPlugItem}
-      contentContainerStyle={styles.listContainer}
-      ItemSeparatorComponent={renderItemSeparatorComponent}
-    />
-  ) : (
     <WebView
       ref={webViewRef}
       source={{
         uri,
       }}
     />
+  ) : (
+    <StackNavigation />
   );
 };
 
