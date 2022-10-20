@@ -1,5 +1,4 @@
-import {useRef} from 'react';
-import {Image, Text, View, TouchableOpacity} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {Styles} from './style';
 import {useNavigation} from '@react-navigation/native';
 

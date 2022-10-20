@@ -2,7 +2,6 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {navigationRef} from '../services/RootNavigation';
 import Home from '../screens/Home';
-import {createStackNavigator} from '@react-navigation/stack';
 import Details from '../screens/Details';
 import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 

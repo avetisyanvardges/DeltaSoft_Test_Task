@@ -1,8 +1,13 @@
 import {StyleSheet} from 'react-native';
-import {BackgroundColors, Colors, Shadow, Sizes} from '../assets/RootStyles';
 
 const Styles = () => {
-  return StyleSheet.create({});
+  return StyleSheet.create({
+    loaderContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  });
 };
 
 export {Styles};

@@ -5712,6 +5712,11 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-carrier-info@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-carrier-info/-/react-native-carrier-info-1.1.2.tgz#4444f7586994acb2f1d78005a2a48635815bae53"
+  integrity sha512-MnE0cUUDXBqp6MVB4jcF7OnzYNNUsmVJ+b3or9DiqLLGNW4Qfdx7+sGUgHhLbPVeIz55ZuU/uEpZO33CMy5uug==
+
 react-native-codegen@^0.70.5:
   version "0.70.5"
   resolved "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.70.5.tgz"

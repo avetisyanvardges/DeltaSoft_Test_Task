@@ -5,34 +5,60 @@ import getUrl from '../services/firebase';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {isEmpty} from 'lodash';
 import {Styles} from './styles';
+import CarrierInfo from 'react-native-carrier-info';
 
+let canGoBack = false;
 function useContainer() {
   const webViewRef = useRef(null);
   const [uri, setUri] = useState('');
   const [loader, setLoader] = useState(true);
-  const conditionForPlug =
-    !isEmpty(uri) && !deviceInfo.google && deviceInfo.isSimExist;
+  const [conditionForPlug, setConditionForPlug] = useState(true);
 
   const styles = Styles();
 
   function getUri() {
+    let loadFire;
     AsyncStorage.getItem('url').then(async url => {
       if (isEmpty(url)) {
-        setUri(await getUrl());
+        loadFire = await getUrl();
+        CarrierInfo.mobileNetworkOperator()
+          .then(result => {
+            if (deviceInfo.google || isEmpty(loadFire)) {
+              setConditionForPlug(true);
+            } else {
+              setConditionForPlug(false);
+            }
+          })
+          .catch(() => setConditionForPlug(true));
+        setUri(loadFire);
         await setLoader(false);
         return;
       }
       await setUri(url);
+      CarrierInfo.mobileNetworkOperator()
+        .then(result => {
+          if (deviceInfo.google || isEmpty(loadFire)) {
+            setConditionForPlug(true);
+          } else {
+            setConditionForPlug(false);
+          }
+        })
+        .catch(() => setConditionForPlug(true));
       await setLoader(false);
     });
   }
 
   const onAndroidBackPress = () => {
     if (webViewRef.current) {
-      BackHandler.exitApp();
-      return true; // prevent default behavior (exit app)
+      if (canGoBack) {
+        webViewRef.current.goBack();
+        return true;
+      } else {
+        return true;
+      }
+    } else {
+      return false;
     }
-    return false;
   };
 
   const renderPlugItem = ({item, index}) => {
@@ -53,6 +79,10 @@ function useContainer() {
         </View>
       </View>
     );
+  };
+
+  const onNavigationStateChange = backState => {
+    canGoBack = backState.canGoBack;
   };
 
   const renderItemSeparatorComponent = () => <View style={styles.separator} />;
@@ -79,6 +109,7 @@ function useContainer() {
     renderPlugItem,
     renderItemSeparatorComponent,
     loader,
+    onNavigationStateChange,
   };
 }
 

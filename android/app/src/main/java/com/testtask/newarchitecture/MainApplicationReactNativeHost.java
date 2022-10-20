@@ -1,4 +1,4 @@
-package com.testtask.newarchitecture;
+package apspinup.moreols.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.testtask.BuildConfig;
-import com.testtask.newarchitecture.components.MainComponentsRegistry;
-import com.testtask.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import apspinup.moreols.BuildConfig;
+import apspinup.moreols.newarchitecture.components.MainComponentsRegistry;
+import apspinup.moreols.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

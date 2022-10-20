@@ -1,4 +1,4 @@
-package com.testtask;
+package apspinup.moreols;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
