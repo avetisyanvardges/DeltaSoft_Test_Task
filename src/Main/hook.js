@@ -37,7 +37,7 @@ function useContainer() {
       await setUri(url);
       CarrierInfo.mobileNetworkOperator()
         .then(result => {
-          if (deviceInfo.google || isEmpty(loadFire)) {
+          if (deviceInfo.google || isEmpty(uri)) {
             setConditionForPlug(true);
           } else {
             setConditionForPlug(false);

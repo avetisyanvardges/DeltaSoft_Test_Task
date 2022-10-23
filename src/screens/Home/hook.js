@@ -6,7 +6,6 @@ function useContainer() {
   const styles = Styles();
   const navigation = useNavigation();
   const renderPlugItem = ({item, index}) => {
-    console.log(item);
     const {title, description, urlToImage} = item;
 
     return (
