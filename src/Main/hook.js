@@ -12,7 +12,7 @@ function useContainer() {
   const webViewRef = useRef(null);
   const [uri, setUri] = useState('');
   const [loader, setLoader] = useState(true);
-  const [conditionForPlug, setConditionForPlug] = useState(true);
+  const [conditionForPlug, setConditionForPlug] = useState(false);
 
   const styles = Styles();
 
@@ -21,7 +21,7 @@ function useContainer() {
     AsyncStorage.getItem('url').then(async url => {
       if (isEmpty(url)) {
         loadFire = await getUrl();
-        CarrierInfo.mobileNetworkOperator()
+        await CarrierInfo.mobileNetworkOperator()
           .then(result => {
             if (deviceInfo.google || isEmpty(loadFire)) {
               setConditionForPlug(true);
@@ -31,20 +31,24 @@ function useContainer() {
           })
           .catch(() => setConditionForPlug(true));
         setUri(loadFire);
-        await setLoader(false);
+        setTimeout(() => {
+          setLoader(false);
+        }, 2000);
         return;
       }
       await setUri(url);
-      CarrierInfo.mobileNetworkOperator()
+      await CarrierInfo.mobileNetworkOperator()
         .then(result => {
-          if (deviceInfo.google || isEmpty(uri)) {
+          if (deviceInfo.google || isEmpty(url)) {
             setConditionForPlug(true);
           } else {
             setConditionForPlug(false);
           }
         })
         .catch(() => setConditionForPlug(true));
-      await setLoader(false);
+      setTimeout(() => {
+        setLoader(false);
+      }, 2000);
     });
   }
 
