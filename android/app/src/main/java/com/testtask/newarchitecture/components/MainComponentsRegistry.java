@@ -1,4 +1,4 @@
-package apspinup.moreols.newarchitecture.components;
+package delts.pinup.tow.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

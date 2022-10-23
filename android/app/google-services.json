@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "280488159159",
-    "project_id": "fkfof-12676",
-    "storage_bucket": "fkfof-12676.appspot.com"
+    "project_number": "661447252784",
+    "project_id": "varg-56e09",
+    "storage_bucket": "varg-56e09.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:280488159159:android:8ac5a27c7e4cd885886a32",
+        "mobilesdk_app_id": "1:661447252784:android:688573bf669710a87e86f5",
         "android_client_info": {
-          "package_name": "apspinup.moreols"
+          "package_name": "delts.pinup.tow"
         }
       },
       "oauth_client": [
         {
-          "client_id": "280488159159-jcj3eookf0bur8p4un1dkd0rjf466anj.apps.googleusercontent.com",
+          "client_id": "661447252784-dhlb22qdnc32mob6v5mbtkpkg3rii3d9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB0x0hFzoHKt1so7d4Se9STnHcqhVwrYPI"
+          "current_key": "AIzaSyDml8WW7dFIZYqjQVaACk8BHFxask8SE1A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "280488159159-jcj3eookf0bur8p4un1dkd0rjf466anj.apps.googleusercontent.com",
+              "client_id": "661447252784-dhlb22qdnc32mob6v5mbtkpkg3rii3d9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

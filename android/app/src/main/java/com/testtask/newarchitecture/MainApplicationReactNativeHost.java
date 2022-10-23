@@ -1,4 +1,4 @@
-package apspinup.moreols.newarchitecture;
+package delts.pinup.tow.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import apspinup.moreols.BuildConfig;
-import apspinup.moreols.newarchitecture.components.MainComponentsRegistry;
-import apspinup.moreols.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import delts.pinup.tow.BuildConfig;
+import delts.pinup.tow.newarchitecture.components.MainComponentsRegistry;
+import delts.pinup.tow.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

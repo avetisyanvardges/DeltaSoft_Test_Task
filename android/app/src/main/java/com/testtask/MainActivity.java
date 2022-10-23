@@ -1,4 +1,4 @@
-package apspinup.moreols;
+package delts.pinup.tow;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
